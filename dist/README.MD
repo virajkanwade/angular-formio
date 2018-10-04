@@ -175,10 +175,3 @@ To render this form, you simply provide that URL to the ```<formio>``` directive
 ```<formio src="https://pjmfogrfqptslvi.form.io/test"></formio>```
 
 Not only will this render the form, but it will also submit that form to the provided API endpoint.
-
-## npm install from github
-```bash
-npm install
-gulp build
-```
-commit the changes in 'dist' folder.

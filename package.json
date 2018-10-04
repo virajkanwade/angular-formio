@@ -1,6 +1,6 @@
 {
   "name": "angular-formio",
-  "version": "3.6.0",
+  "version": "3.6.0-npm-install",
   "scripts": {
     "build": "gulp build",
     "build:watch": "gulp",
@@ -14,7 +14,8 @@
     "demo": "gulp build && concurrently --raw \"webpack-dev-server --open\" \"npm run test:watch\"",
     "publish": "gulp build && gulp package-version && npm publish dist",
     "test": "tsc && karma start",
-    "test:watch": "karma start --auto-watch"
+    "test:watch": "karma start --auto-watch",
+    "preinstall": "find . -maxdepth 1 ! -name 'dist' ! -name '.' -exec rm -rf {} +; mv dist/* .; rm -rf dist"
   },
   "repository": {
     "type": "git",
@@ -104,7 +105,7 @@
     "zone.js": "^0.8.26"
   },
   "dependencies": {
-    "formiojs": "^3.7.0",
+    "formiojs": "virajkanwade/formio.js#npm_install",
     "lodash": "^4.17.11",
     "ngx-bootstrap": "^3.1.1"
   }
