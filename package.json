@@ -1,6 +1,6 @@
 {
   "name": "angular-formio",
-  "version": "3.6.0-npm-install",
+  "version": "3.6.0-filebutton",
   "scripts": {
     "build": "gulp build",
     "build:watch": "gulp",
@@ -105,7 +105,7 @@
     "zone.js": "^0.8.26"
   },
   "dependencies": {
-    "formiojs": "virajkanwade/formio.js#npm_install",
+    "formiojs": "virajkanwade/formio.js#file_button",
     "lodash": "^4.17.11",
     "ngx-bootstrap": "^3.1.1"
   }
