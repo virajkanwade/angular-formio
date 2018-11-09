@@ -33,8 +33,7 @@ var FormioResourceIndexComponent = /** @class */ (function () {
         if (this.service &&
             this.config.parents &&
             this.config.parents.length) {
-            // Wait for the parents to load before loading this grid.
-            this.service.parentsLoaded.then(function (parents) {
+            this.service.loadParents().then(function (parents) {
                 each(parents, function (parent) {
                     if (parent && parent.filter) {
                         _this.gridQuery['data.' + parent.name + '._id'] =

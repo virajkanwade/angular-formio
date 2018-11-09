@@ -31,17 +31,9 @@ var FormioResourceService = /** @class */ (function () {
         this.formUrl = this.appConfig.appUrl + '/' + this.config.form;
         this.refresh = new EventEmitter();
         this.resource = { data: {} };
-        this.resourceLoaded = new Promise(function (resolve, reject) {
-            _this.resourceResolve = resolve;
-            _this.resourceReject = reject;
-        });
         this.formLoaded = new Promise(function (resolve, reject) {
             _this.formResolve = resolve;
             _this.formReject = reject;
-        });
-        this.parentsLoaded = new Promise(function (resolve, reject) {
-            _this.parentsResolve = resolve;
-            _this.parentsReject = reject;
         });
         // Add this resource service to the list of all resources in context.
         if (this.resourcesService) {
@@ -101,7 +93,10 @@ var FormioResourceService = /** @class */ (function () {
             this.resourceUrl += '/submission/' + this.resourceId;
         }
         this.formio = new Formio(this.resourceUrl);
-        this.setParents();
+        if (this.resourcesService) {
+            this.resources[this.config.name] = this;
+        }
+        this.loadParents();
     };
     /**
      * @return {?}
@@ -119,7 +114,7 @@ var FormioResourceService = /** @class */ (function () {
             _this.form = form;
             _this.formResolve(form);
             _this.loader.loading = false;
-            _this.setParents();
+            _this.loadParents();
             return form;
         }, function (err) { return _this.onFormError(err); })
             .catch(function (err) { return _this.onFormError(err); });
@@ -128,54 +123,56 @@ var FormioResourceService = /** @class */ (function () {
     /**
      * @return {?}
      */
-    FormioResourceService.prototype.setParents = /**
+    FormioResourceService.prototype.loadParents = /**
      * @return {?}
      */
     function () {
         var _this = this;
-        if (!this.config.parents || !this.config.parents.length || !this.form) {
-            return;
+        if (!this.config.parents || !this.config.parents.length) {
+            return Promise.resolve([]);
         }
         if (!this.resourcesService) {
             console.warn('You must provide the FormioResources within your application to use nested resources.');
-            return;
+            return Promise.resolve([]);
         }
-        /** @type {?} */
-        var _parentsLoaded = [];
-        this.config.parents.forEach(function (parent) {
+        return this.formLoading.then(function (form) {
             /** @type {?} */
-            var resourceName = parent.resource || parent;
-            /** @type {?} */
-            var resourceField = parent.field || parent;
-            /** @type {?} */
-            var filterResource = parent.hasOwnProperty('filter') ? parent.filter : true;
-            if (_this.resources.hasOwnProperty(resourceName)) {
-                _parentsLoaded.push(_this.resources[resourceName].resourceLoaded.then(function (resource) {
-                    /** @type {?} */
-                    var parentPath = '';
-                    Utils.eachComponent(_this.form.components, function (component, path) {
-                        if (component.key === resourceField) {
-                            component.hidden = true;
-                            component.clearOnHide = false;
-                            _.set(_this.resource.data, path, resource);
-                            parentPath = path;
-                            return true;
-                        }
-                    });
-                    return {
-                        name: parentPath,
-                        filter: filterResource,
-                        resource: resource
-                    };
-                }));
-            }
-        });
-        // When all the parents have loaded, emit that to the onParents emitter.
-        Promise.all(_parentsLoaded).then(function (parents) {
-            _this.parentsResolve(parents);
-            _this.refresh.emit({
-                form: _this.form,
-                submission: _this.resource
+            var _parentsLoaded = [];
+            _this.config.parents.forEach(function (parent) {
+                /** @type {?} */
+                var resourceName = parent.resource || parent;
+                /** @type {?} */
+                var resourceField = parent.field || parent;
+                /** @type {?} */
+                var filterResource = parent.hasOwnProperty('filter') ? parent.filter : true;
+                if (_this.resources.hasOwnProperty(resourceName) && _this.resources[resourceName].resourceLoaded) {
+                    _parentsLoaded.push(_this.resources[resourceName].resourceLoaded.then(function (resource) {
+                        /** @type {?} */
+                        var parentPath = '';
+                        Utils.eachComponent(form.components, function (component, path) {
+                            if (component.key === resourceField) {
+                                component.hidden = true;
+                                component.clearOnHide = false;
+                                _.set(_this.resource.data, path, resource);
+                                parentPath = path;
+                                return true;
+                            }
+                        });
+                        return {
+                            name: parentPath,
+                            filter: filterResource,
+                            resource: resource
+                        };
+                    }));
+                }
+            });
+            // When all the parents have loaded, emit that to the onParents emitter.
+            return Promise.all(_parentsLoaded).then(function (parents) {
+                _this.refresh.emit({
+                    form: form,
+                    submission: _this.resource
+                });
+                return parents;
             });
         });
     };
@@ -188,7 +185,6 @@ var FormioResourceService = /** @class */ (function () {
      * @return {?}
      */
     function (err) {
-        this.resourceReject(err);
         this.onError(err);
     };
     /**
@@ -203,11 +199,10 @@ var FormioResourceService = /** @class */ (function () {
         var _this = this;
         this.setContext(route);
         this.loader.loading = true;
-        this.resourceLoading = this.formio
+        this.resourceLoading = this.resourceLoaded = this.formio
             .loadSubmission(null, { ignoreCache: true })
             .then(function (resource) {
             _this.resource = resource;
-            _this.resourceResolve(resource);
             _this.loader.loading = false;
             _this.refresh.emit({
                 property: 'submission',
@@ -286,10 +281,6 @@ if (false) {
     /** @type {?} */
     FormioResourceService.prototype.resourceLoaded;
     /** @type {?} */
-    FormioResourceService.prototype.resourceResolve;
-    /** @type {?} */
-    FormioResourceService.prototype.resourceReject;
-    /** @type {?} */
     FormioResourceService.prototype.resourceId;
     /** @type {?} */
     FormioResourceService.prototype.resources;
@@ -301,12 +292,6 @@ if (false) {
     FormioResourceService.prototype.formResolve;
     /** @type {?} */
     FormioResourceService.prototype.formReject;
-    /** @type {?} */
-    FormioResourceService.prototype.parentsLoaded;
-    /** @type {?} */
-    FormioResourceService.prototype.parentsResolve;
-    /** @type {?} */
-    FormioResourceService.prototype.parentsReject;
     /** @type {?} */
     FormioResourceService.prototype.appConfig;
     /** @type {?} */
