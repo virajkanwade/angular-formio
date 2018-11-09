@@ -1,6 +1,6 @@
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
  */
 import { Input, Output, ViewChild, TemplateRef, EventEmitter } from '@angular/core';
 import { GridHeaderComponent } from './GridHeaderComponent';

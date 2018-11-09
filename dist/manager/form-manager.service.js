@@ -1,6 +1,6 @@
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
  */
 import { Injectable } from '@angular/core';
 import { FormioAppConfig } from '../formio.config';
@@ -39,8 +39,8 @@ var FormManagerService = /** @class */ (function () {
     function (route) {
         var _this = this;
         route.params.subscribe(function (params) {
-            if (params["id"]) {
-                _this.formio = new Formio(_this.formio.formsUrl + "/" + params["id"]);
+            if (params.id) {
+                _this.formio = new Formio(_this.formio.formsUrl + "/" + params.id);
             }
             else {
                 _this.reset();
@@ -67,7 +67,7 @@ var FormManagerService = /** @class */ (function () {
     function (route) {
         var _this = this;
         route.params.subscribe(function (params) {
-            _this.formio = new Formio(_this.formio.submissionsUrl + "/" + params["id"]);
+            _this.formio = new Formio(_this.formio.submissionsUrl + "/" + params.id);
         });
     };
     /**

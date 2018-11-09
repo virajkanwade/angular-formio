@@ -1,6 +1,6 @@
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
  */
 import { Component, ChangeDetectorRef } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -40,7 +40,6 @@ var FormioResourceIndexComponent = /** @class */ (function () {
                             parent.resource._id;
                     }
                 });
-                // Set the source to load the grid.
                 // Set the source to load the grid.
                 _this.gridSrc = _this.service.formUrl;
             });

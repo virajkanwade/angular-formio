@@ -1,24 +1,26 @@
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
  */
 import { Injectable } from '@angular/core';
 /**
  * @record
  */
 export function FormioResourceRouteConfig() { }
-/** @type {?|undefined} */
-FormioResourceRouteConfig.prototype.index;
-/** @type {?|undefined} */
-FormioResourceRouteConfig.prototype.create;
-/** @type {?|undefined} */
-FormioResourceRouteConfig.prototype.resource;
-/** @type {?|undefined} */
-FormioResourceRouteConfig.prototype.view;
-/** @type {?|undefined} */
-FormioResourceRouteConfig.prototype.edit;
-/** @type {?|undefined} */
-FormioResourceRouteConfig.prototype.delete;
+if (false) {
+    /** @type {?|undefined} */
+    FormioResourceRouteConfig.prototype.index;
+    /** @type {?|undefined} */
+    FormioResourceRouteConfig.prototype.create;
+    /** @type {?|undefined} */
+    FormioResourceRouteConfig.prototype.resource;
+    /** @type {?|undefined} */
+    FormioResourceRouteConfig.prototype.view;
+    /** @type {?|undefined} */
+    FormioResourceRouteConfig.prototype.edit;
+    /** @type {?|undefined} */
+    FormioResourceRouteConfig.prototype.delete;
+}
 var FormioResourceConfig = /** @class */ (function () {
     function FormioResourceConfig() {
         this.name = '';

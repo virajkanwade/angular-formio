@@ -1,6 +1,6 @@
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
  */
 import { EventEmitter, Injectable, Optional } from '@angular/core';
 import { FormioResourceConfig } from './resource.config';
@@ -136,6 +136,7 @@ var FormioResourceService = /** @class */ (function () {
             return Promise.resolve([]);
         }
         return this.formLoading.then(function (form) {
+            // Iterate through the list of parents.
             /** @type {?} */
             var _parentsLoaded = [];
             _this.config.parents.forEach(function (parent) {

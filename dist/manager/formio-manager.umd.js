@@ -8,7 +8,7 @@ var ___default = 'default' in _ ? _['default'] : _;
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
  */
 /**
  * @record
@@ -26,7 +26,7 @@ var FormManagerConfig = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
  */
 var FormioAppConfig = /** @class */ (function () {
     function FormioAppConfig() {
@@ -41,7 +41,7 @@ var FormioAppConfig = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
  */
 var FormManagerService = /** @class */ (function () {
     function FormManagerService(appConfig, config) {
@@ -76,8 +76,8 @@ var FormManagerService = /** @class */ (function () {
     function (route) {
         var _this = this;
         route.params.subscribe(function (params) {
-            if (params["id"]) {
-                _this.formio = new formiojs.Formio(_this.formio.formsUrl + "/" + params["id"]);
+            if (params.id) {
+                _this.formio = new formiojs.Formio(_this.formio.formsUrl + "/" + params.id);
             }
             else {
                 _this.reset();
@@ -104,7 +104,7 @@ var FormManagerService = /** @class */ (function () {
     function (route) {
         var _this = this;
         route.params.subscribe(function (params) {
-            _this.formio = new formiojs.Formio(_this.formio.submissionsUrl + "/" + params["id"]);
+            _this.formio = new formiojs.Formio(_this.formio.submissionsUrl + "/" + params.id);
         });
     };
     /**
@@ -142,7 +142,7 @@ var FormManagerService = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
  */
 var FormManagerIndexComponent = /** @class */ (function () {
     function FormManagerIndexComponent(service, route, router$$1, config) {
@@ -208,8 +208,9 @@ var FormManagerIndexComponent = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
  */
+/* tslint:disable */
 var FormBuilderComponent = /** @class */ (function () {
     function FormBuilderComponent(config) {
         var _this = this;
@@ -317,7 +318,7 @@ var FormBuilderComponent = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
  */
 var FormManagerEditComponent = /** @class */ (function () {
     function FormManagerEditComponent(service, router$$1, route, config, ref) {
@@ -412,9 +413,12 @@ var FormManagerEditComponent = /** @class */ (function () {
 }());
 
 var __extends = (undefined && undefined.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -423,7 +427,7 @@ var __extends = (undefined && undefined.__extends) || (function () {
 })();
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
  */
 var FormManagerCreateComponent = /** @class */ (function (_super) {
     __extends(FormManagerCreateComponent, _super);
@@ -449,7 +453,7 @@ var FormManagerCreateComponent = /** @class */ (function (_super) {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
  */
 var FormManagerFormComponent = /** @class */ (function () {
     function FormManagerFormComponent(service, route) {
@@ -480,7 +484,7 @@ var FormManagerFormComponent = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
  */
 var FormManagerViewComponent = /** @class */ (function () {
     function FormManagerViewComponent(service, router$$1, route) {
@@ -515,7 +519,7 @@ var FormManagerViewComponent = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
  */
 var FormManagerDeleteComponent = /** @class */ (function () {
     function FormManagerDeleteComponent(service, router$$1, route) {
@@ -560,7 +564,7 @@ var FormManagerDeleteComponent = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
  */
 var SubmissionEditComponent = /** @class */ (function () {
     function SubmissionEditComponent(service, router$$1, route) {
@@ -595,7 +599,7 @@ var SubmissionEditComponent = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
  */
 var SubmissionDeleteComponent = /** @class */ (function () {
     function SubmissionDeleteComponent(service, router$$1, route) {
@@ -640,7 +644,7 @@ var SubmissionDeleteComponent = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
  */
 var SubmissionViewComponent = /** @class */ (function () {
     function SubmissionViewComponent(service) {
@@ -660,7 +664,7 @@ var SubmissionViewComponent = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
  */
 var SubmissionIndexComponent = /** @class */ (function () {
     function SubmissionIndexComponent(service, route, router$$1) {
@@ -695,7 +699,7 @@ var SubmissionIndexComponent = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
  */
 var SubmissionComponent = /** @class */ (function () {
     function SubmissionComponent(service, route) {
@@ -726,7 +730,7 @@ var SubmissionComponent = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
  */
 /**
  * @param {?=} config
@@ -797,7 +801,7 @@ function FormManagerRoutes(config) {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
  */
 var FormioService = /** @class */ (function () {
     function FormioService(url, options) {
@@ -901,7 +905,7 @@ var FormioService = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
  */
 var FormioLoader = /** @class */ (function () {
     function FormioLoader() {
@@ -915,7 +919,7 @@ var FormioLoader = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
  */
 /**
  * @record
@@ -963,8 +967,9 @@ var FormioAlerts = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
  */
+/* tslint:disable */
 var FormioComponent = /** @class */ (function () {
     function FormioComponent(loader, config) {
         var _this = this;
@@ -1312,6 +1317,8 @@ var FormioComponent = /** @class */ (function () {
         }
         this.submitting = true;
         this.beforeSubmit.emit(submission);
+        // if they provide a beforeSubmit hook, then allow them to alter the submission asynchronously
+        // or even provide a custom Error method.
         /** @type {?} */
         var beforeSubmit = _.get(this.options, 'hooks.beforeSubmit');
         if (beforeSubmit) {
@@ -1375,7 +1382,7 @@ var FormioComponent = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
  */
 var FormioAlertsComponent = /** @class */ (function () {
     function FormioAlertsComponent() {
@@ -1397,7 +1404,7 @@ var FormioAlertsComponent = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
  */
 var FormioLoaderComponent = /** @class */ (function () {
     function FormioLoaderComponent(loader) {
@@ -1419,7 +1426,7 @@ var FormioLoaderComponent = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
  */
 var FormioModule = /** @class */ (function () {
     function FormioModule() {
@@ -1456,7 +1463,7 @@ var FormioModule = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
  */
 var GridHeaderComponent = /** @class */ (function () {
     function GridHeaderComponent() {
@@ -1494,9 +1501,12 @@ var GridHeaderComponent = /** @class */ (function () {
 }());
 
 var __extends$1 = (undefined && undefined.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -1505,7 +1515,7 @@ var __extends$1 = (undefined && undefined.__extends) || (function () {
 })();
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
  */
 var FormGridHeaderComponent = /** @class */ (function (_super) {
     __extends$1(FormGridHeaderComponent, _super);
@@ -1550,7 +1560,7 @@ var FormGridHeaderComponent = /** @class */ (function (_super) {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
  */
 var GridBodyComponent = /** @class */ (function () {
     function GridBodyComponent() {
@@ -1649,9 +1659,12 @@ var GridBodyComponent = /** @class */ (function () {
 }());
 
 var __extends$2 = (undefined && undefined.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -1660,7 +1673,7 @@ var __extends$2 = (undefined && undefined.__extends) || (function () {
 })();
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
  */
 var FormGridBodyComponent = /** @class */ (function (_super) {
     __extends$2(FormGridBodyComponent, _super);
@@ -1694,7 +1707,7 @@ var FormGridBodyComponent = /** @class */ (function (_super) {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
  */
 var GridFooterComponent = /** @class */ (function () {
     function GridFooterComponent() {
@@ -1713,9 +1726,12 @@ var GridFooterComponent = /** @class */ (function () {
 }());
 
 var __extends$3 = (undefined && undefined.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -1724,7 +1740,7 @@ var __extends$3 = (undefined && undefined.__extends) || (function () {
 })();
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
  */
 var FormGridFooterComponent = /** @class */ (function (_super) {
     __extends$3(FormGridFooterComponent, _super);
@@ -1756,7 +1772,7 @@ var FormGridFooterComponent = /** @class */ (function (_super) {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
  */
 var FormComponents = {
     header: FormGridHeaderComponent,
@@ -1765,9 +1781,12 @@ var FormComponents = {
 };
 
 var __extends$4 = (undefined && undefined.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -1776,7 +1795,7 @@ var __extends$4 = (undefined && undefined.__extends) || (function () {
 })();
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
  */
 var SubmissionGridHeaderComponent = /** @class */ (function (_super) {
     __extends$4(SubmissionGridHeaderComponent, _super);
@@ -1820,9 +1839,12 @@ var SubmissionGridHeaderComponent = /** @class */ (function (_super) {
 }(GridHeaderComponent));
 
 var __extends$5 = (undefined && undefined.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -1831,7 +1853,7 @@ var __extends$5 = (undefined && undefined.__extends) || (function () {
 })();
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
  */
 var SubmissionGridBodyComponent = /** @class */ (function (_super) {
     __extends$5(SubmissionGridBodyComponent, _super);
@@ -1892,9 +1914,12 @@ var SubmissionGridBodyComponent = /** @class */ (function (_super) {
 }(GridBodyComponent));
 
 var __extends$6 = (undefined && undefined.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -1903,7 +1928,7 @@ var __extends$6 = (undefined && undefined.__extends) || (function () {
 })();
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
  */
 var SubmissionGridFooterComponent = /** @class */ (function (_super) {
     __extends$6(SubmissionGridFooterComponent, _super);
@@ -1922,7 +1947,7 @@ var SubmissionGridFooterComponent = /** @class */ (function (_super) {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
  */
 var SubmissionComponents = {
     header: SubmissionGridHeaderComponent,
@@ -1932,7 +1957,7 @@ var SubmissionComponents = {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
  */
 var FormioGridComponent = /** @class */ (function () {
     function FormioGridComponent(loader, alerts, resolver, ref) {
@@ -2001,6 +2026,7 @@ var FormioGridComponent = /** @class */ (function () {
      */
     function () {
         var _this = this;
+        // Create our components.
         /** @type {?} */
         var comps = this.components || ((this.gridType === 'form') ? FormComponents : SubmissionComponents);
         this.header = this.createComponent(this.headerElement, comps.header);
@@ -2204,7 +2230,7 @@ var FormioGridComponent = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
  */
 var FormioGrid = /** @class */ (function () {
     function FormioGrid() {
@@ -2248,7 +2274,7 @@ var FormioGrid = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
  */
 /**
  * @param {?} Class
@@ -2277,7 +2303,7 @@ function extendRouter(Class, config, ClassRoutes) {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
  */
 var FormManagerModule = /** @class */ (function () {
     function FormManagerModule() {
@@ -2334,7 +2360,7 @@ var FormManagerModule = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
  */
 
 exports.FormManagerConfig = FormManagerConfig;

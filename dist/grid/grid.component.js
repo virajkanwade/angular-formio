@@ -1,6 +1,6 @@
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
  */
 import { Component, Input, Output, EventEmitter, ViewChild, ViewContainerRef, ComponentFactoryResolver, ChangeDetectorRef } from '@angular/core';
 import { FormioLoader } from '../components/loader/formio.loader';
@@ -76,6 +76,7 @@ var FormioGridComponent = /** @class */ (function () {
      */
     function () {
         var _this = this;
+        // Create our components.
         /** @type {?} */
         var comps = this.components || ((this.gridType === 'form') ? FormComponents : SubmissionComponents);
         this.header = this.createComponent(this.headerElement, comps.header);

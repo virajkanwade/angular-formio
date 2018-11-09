@@ -1,6 +1,6 @@
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
  */
 import { Component, Input, Output, EventEmitter, ViewEncapsulation, Optional, ElementRef, ViewChild } from '@angular/core';
 import { FormioService } from '../../formio.service';
@@ -9,6 +9,7 @@ import { FormioAlerts } from '../alerts/formio.alerts';
 import { FormioAppConfig } from '../../formio.config';
 import { each, isEmpty, get, assign } from 'lodash';
 import { Formio } from 'formiojs';
+/* tslint:disable */
 var FormioComponent = /** @class */ (function () {
     function FormioComponent(loader, config) {
         var _this = this;
@@ -356,6 +357,8 @@ var FormioComponent = /** @class */ (function () {
         }
         this.submitting = true;
         this.beforeSubmit.emit(submission);
+        // if they provide a beforeSubmit hook, then allow them to alter the submission asynchronously
+        // or even provide a custom Error method.
         /** @type {?} */
         var beforeSubmit = get(this.options, 'hooks.beforeSubmit');
         if (beforeSubmit) {
