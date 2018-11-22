@@ -6,7 +6,7 @@
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
  */
 /**
  * @record
@@ -27,7 +27,7 @@ var FormioAuthConfig = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
  */
 var FormioAppConfig = /** @class */ (function () {
     function FormioAppConfig() {
@@ -42,7 +42,7 @@ var FormioAppConfig = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
  */
 var FormioAuthService = /** @class */ (function () {
     function FormioAuthService(appConfig, config) {
@@ -231,7 +231,7 @@ var FormioAuthService = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
  */
 var FormioAuthComponent = /** @class */ (function () {
     function FormioAuthComponent() {
@@ -246,7 +246,7 @@ var FormioAuthComponent = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
  */
 var FormioAuthLoginComponent = /** @class */ (function () {
     function FormioAuthLoginComponent(service) {
@@ -266,7 +266,7 @@ var FormioAuthLoginComponent = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
  */
 var FormioAuthRegisterComponent = /** @class */ (function () {
     function FormioAuthRegisterComponent(service) {
@@ -286,7 +286,7 @@ var FormioAuthRegisterComponent = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
  */
 /**
  * @param {?=} config
@@ -318,7 +318,7 @@ function FormioAuthRoutes(config) {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
  */
 var FormioService = /** @class */ (function () {
     function FormioService(url, options) {
@@ -422,7 +422,7 @@ var FormioService = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
  */
 var FormioLoader = /** @class */ (function () {
     function FormioLoader() {
@@ -436,7 +436,7 @@ var FormioLoader = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
  */
 /**
  * @record
@@ -484,9 +484,8 @@ var FormioAlerts = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
  */
-/* tslint:disable */
 var FormioComponent = /** @class */ (function () {
     function FormioComponent(loader, config) {
         var _this = this;
@@ -834,8 +833,6 @@ var FormioComponent = /** @class */ (function () {
         }
         this.submitting = true;
         this.beforeSubmit.emit(submission);
-        // if they provide a beforeSubmit hook, then allow them to alter the submission asynchronously
-        // or even provide a custom Error method.
         /** @type {?} */
         var beforeSubmit = lodash.get(this.options, 'hooks.beforeSubmit');
         if (beforeSubmit) {
@@ -899,9 +896,8 @@ var FormioComponent = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
  */
-/* tslint:disable */
 var FormBuilderComponent = /** @class */ (function () {
     function FormBuilderComponent(config) {
         var _this = this;
@@ -1009,7 +1005,7 @@ var FormBuilderComponent = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
  */
 var FormioAlertsComponent = /** @class */ (function () {
     function FormioAlertsComponent() {
@@ -1031,7 +1027,7 @@ var FormioAlertsComponent = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
  */
 var FormioLoaderComponent = /** @class */ (function () {
     function FormioLoaderComponent(loader) {
@@ -1053,7 +1049,7 @@ var FormioLoaderComponent = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
  */
 var FormioModule = /** @class */ (function () {
     function FormioModule() {
@@ -1090,7 +1086,7 @@ var FormioModule = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
  */
 /**
  * @param {?} Class
@@ -1119,7 +1115,7 @@ function extendRouter(Class, config, ClassRoutes) {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
  */
 var FormioAuth = /** @class */ (function () {
     function FormioAuth() {
@@ -1165,7 +1161,7 @@ var FormioAuth = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
  */
 
 exports.FormioAuthConfig = FormioAuthConfig;

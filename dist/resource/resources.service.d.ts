@@ -4,7 +4,7 @@ export interface FormioResourceMap {
     [name: string]: any;
 }
 export declare class FormioResources {
-    auth?: FormioAuthService;
+    auth: FormioAuthService;
     resources: FormioResourceMap;
     error: EventEmitter<any>;
     onError: EventEmitter<any>;

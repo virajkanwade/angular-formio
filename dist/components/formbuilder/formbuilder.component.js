@@ -1,12 +1,11 @@
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
  */
 import { Component, Input, ViewEncapsulation, Optional, ElementRef, ViewChild, EventEmitter, Output } from '@angular/core';
 import { FormioAppConfig } from '../../formio.config';
 import { Formio } from 'formiojs';
 import { assign } from 'lodash';
-/* tslint:disable */
 var FormBuilderComponent = /** @class */ (function () {
     function FormBuilderComponent(config) {
         var _this = this;

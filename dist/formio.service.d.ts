@@ -2,7 +2,7 @@ import { Observable } from 'rxjs';
 import { FormioForm } from './formio.common';
 export declare class FormioService {
     url: string;
-    options?: object;
+    options: object;
     formio: any;
     constructor(url: string, options?: object);
     requestWrapper(fn: any): any;
